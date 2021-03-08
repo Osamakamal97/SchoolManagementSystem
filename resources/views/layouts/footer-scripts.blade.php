@@ -4,8 +4,7 @@
 <script src="{{ URL::asset('assets/js/plugins-jquery.js') }}"></script>
 <!-- plugin_path -->
 <script>
-    var plugin_path = 'js/';
-
+    var plugin_path = '{{ asset('assets/js') }}';
 </script>
 
 <!-- chart -->
@@ -29,3 +28,6 @@
 <script src="{{ URL::asset('assets/js/lobilist.js') }}"></script>
 <!-- custom -->
 <script src="{{ URL::asset('assets/js/custom.js') }}"></script>
+@livewireScripts
+{{-- @toastr_js
+@toastr_render --}}

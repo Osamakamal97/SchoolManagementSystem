@@ -1,27 +1,31 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::group(['middleware' => 'guest'], function () {
+    Route::get('/', function () {
+        return view('auth.login');
+    });
+    Auth::routes();
+});
+
+// Route::get('change-lang', [DashboardController::class,'changeLang'])->name('changeLang');
 
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth']
     ],
     function () {
-        Route::get('/', function () {
-            return view('dashboard');
+        Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+        Route::resources([
+            'grades' => GradeController::class,
+        ]);
+        Route::get('logout', function () {
+            Auth::logout();
+            return view('auth.login');
         });
     }
 );

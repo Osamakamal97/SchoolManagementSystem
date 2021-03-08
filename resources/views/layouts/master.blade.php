@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     @include('layouts.head')
 </head>
-
+    
 <body>
 
     <div class="wrapper">
@@ -18,9 +18,9 @@
         <!--=================================
  preloader -->
 
-        <div id="pre-loader">
-            <img src="assets/images/pre-loader/loader-01.svg" alt="">
-        </div>
+        {{-- <div id="pre-loader">
+            <img src="{{ asset('assets/images/pre-loader/loader-01.svg') }}" alt="">
+        </div> --}}
 
         <!--=================================
  preloader -->

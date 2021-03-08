@@ -84,7 +84,7 @@ var $window = $(window),
  POTENZA.counters = function () {
   var counter = jQuery(".counter");
   if(counter.length > 0) {  
-      loadScript(plugin_path + 'counter/jquery.countTo.js', function() {
+      loadScript(plugin_path + '/counter/jquery.countTo.js', function() {
         $counter.each(function () {
          var $elem = $(this);                 
            $elem.appear(function () {
@@ -115,7 +115,7 @@ var $window = $(window),
         NiceScroll
 *************************/ 
     POTENZA.pniceScroll = function () { 
-        loadScript(plugin_path + 'nicescroll/jquery.nicescroll.js', function() {
+        loadScript(plugin_path + '/nicescroll/jquery.nicescroll.js', function() {
         $(".scrollbar").niceScroll({
           scrollspeed: 150,
           mousescrollstep: 38,
@@ -187,7 +187,7 @@ var $window = $(window),
 ****************************************************/
  POTENZA.pieChart = function () {
         if ($pieChart.exists()) {
-            loadScript(plugin_path + 'easy-pie-chart/easy-pie-chart.js', function() {
+            loadScript(plugin_path + '/easy-pie-chart/easy-pie-chart.js', function() {
             $pieChart.each(function () {
                 var $elem = $(this),
                     pieChartSize = $elem.attr('data-size') || "160",
@@ -225,8 +225,8 @@ var $window = $(window),
 *************************/  
 POTENZA.datatables = function () {
    if ($('#datatable').exists()) {
-       loadScript(plugin_path + 'bootstrap-datatables/jquery.dataTables.min.js', function() {
-       loadScript(plugin_path + 'bootstrap-datatables/dataTables.bootstrap4.min.js', function() {
+       loadScript(plugin_path + '/bootstrap-datatables/jquery.dataTables.min.js', function() {
+       loadScript(plugin_path + '/bootstrap-datatables/dataTables.bootstrap4.min.js', function() {
       $('#datatable').DataTable();
      });
        });
@@ -253,7 +253,7 @@ POTENZA.wowanimation = function () {
 *************************/ 
 POTENZA.fancyselect = function () {
   if ($('.fancyselect').exists()) {
-    loadScript(plugin_path + 'jquery-nice-select/jquery-nice-select.js', function() {
+    loadScript(plugin_path + '/jquery-nice-select/jquery-nice-select.js', function() {
        $('select.fancyselect:not(.ignore)').niceSelect();      
       });
     }     
