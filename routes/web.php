@@ -20,8 +20,10 @@ Route::group(
     ],
     function () {
         Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+        Route::post('classrooms/filter', 'ClassroomController@gradeFilter')->name('classrooms.gradeFilter');
         Route::resources([
             'grades' => GradeController::class,
+            'classrooms' => ClassroomController::class,
         ]);
         Route::get('logout', function () {
             Auth::logout();

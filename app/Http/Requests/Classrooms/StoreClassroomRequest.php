@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Classrooms;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class GradesRequest extends FormRequest
+class StoreClassroomRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,10 +23,10 @@ class GradesRequest extends FormRequest
      */
     public function rules()
     {
-        // dd($this->name_en);
         return [
-            'name' => 'required|unique:grades,name->ar,' . ($this->method() == 'PUT' ? $this->grade->id : ''),
-            'name_en' => 'required|unique:grades,name->en,' . ($this->method() == 'PUT' ? $this->grade->id : ''),
+            'classrooms_list.*.name' => 'required|unique:classrooms,name->ar',
+            'classrooms_list.*.name_en' => 'required|unique:classrooms,name->en',
+            'classrooms_list.*.grade_id' => 'required|not_in:0',
             'notes' => 'nullable'
         ];
     }

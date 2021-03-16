@@ -70,6 +70,10 @@ class GradeController extends Controller
     public function destroy(Grade $grade)
     {
         try {
+            if ($grade->classrooms()->count() >= 1){
+                toastr()->error(__('messages.cant delete grade'));
+                return redirect()->route('grades.index');
+            }
             $grade->delete();
             toastr()->success(__('messages.delete'));
             return redirect()->route('grades.index');

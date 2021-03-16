@@ -71,17 +71,9 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">{{ trans('dashboard.notes') }}
-                                    :</label>
-                                <textarea class="form-control" name="notes" id="exampleFormControlTextarea1"
-                                    rows="3">{{ $grade->notes }}</textarea>
-                                @error('notes')
-                                <em id="fname-error" style="color: red" class="error help-block">{{$message}}</em>
-                                @enderror
-                            </div>
+                            <x-inputs.edit.notes :row="$grade" />
                         </x-modals.edit>
-                        <x-modals.delete :route="'grades'" :id="$grade->id" :item="$grade->name"/>
+                        <x-modals.delete :route="'grades'" :id="$grade->id" :item="$grade->name" />
                         @endforeach
                     </tbody>
                 </x-table>
@@ -95,7 +87,7 @@
         <div class="col">
             <label for="Name" class="mr-sm-2">{{ trans('grades.stage_name_ar') }}
                 :</label>
-            <input id="Name" type="text" name="name" class="form-control">
+            <input id="Name" type="text" name="name" class="form-control" value="{{ old('name') }}">
             @error('name')
             <em id="fname-error" style="color: red" class="error help-block">{{$message}}</em>
             @enderror
@@ -103,20 +95,13 @@
         <div class="col">
             <label for="Name_en" class="mr-sm-2">{{ trans('grades.stage_name_en') }}
                 :</label>
-            <input type="text" class="form-control" name="name_en">
+            <input type="text" class="form-control" name="name_en" value="{{ old('name_en') }}">
             @error('name_en')
             <em id="fname-error" style="color: red" class="error help-block">{{$message}}</em>
             @enderror
         </div>
     </div>
-    <div class="form-group">
-        <label for="exampleFormControlTextarea1">{{ trans('dashboard.notes') }}
-            :</label>
-        <textarea class="form-control" name="notes" id="exampleFormControlTextarea1" rows="3"></textarea>
-        @error('notes')
-        <em id="fname-error" style="color: red" class="error help-block">{{$message}}</em>
-        @enderror
-    </div>
+    <x-inputs.create.notes />
 </x-modals.create>
 <!-- row closed -->
 @endsection

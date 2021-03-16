@@ -5,17 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 
-class Grade extends Model
+class Classroom extends Model
 {
 
     use HasTranslations;
 
-    protected $fillable = ['name', 'notes', 'status'];
+    protected $fillable = ['name', 'grade_id', 'notes'];
     protected $hidden = ['created_at', 'updated_at'];
+    public $timestamps = true;
     public $translatable = ['name'];
 
-    public function classrooms()
+    public function grade()
     {
-        return $this->hasMany(Classroom::class);
+        return $this->belongsTo(Grade::class, 'grade_id');
     }
 }

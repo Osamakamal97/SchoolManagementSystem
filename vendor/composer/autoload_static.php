@@ -173,6 +173,7 @@ class ComposerStaticInit4eb0b23d6fb53dcb1eadf2c4c61d1ce1
         'C' => 
         array (
             'Cron\\' => 5,
+            'CodeZero\\UniqueTranslation\\' => 27,
             'Carbon\\' => 7,
         ),
         'B' => 
@@ -489,6 +490,10 @@ class ComposerStaticInit4eb0b23d6fb53dcb1eadf2c4c61d1ce1
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
         ),
+        'CodeZero\\UniqueTranslation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/codezero/laravel-unique-translation/src',
+        ),
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
@@ -651,6 +656,9 @@ class ComposerStaticInit4eb0b23d6fb53dcb1eadf2c4c61d1ce1
         'Carbon\\Traits\\Units' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Units.php',
         'Carbon\\Traits\\Week' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Week.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
+        'CodeZero\\UniqueTranslation\\UniqueTranslationRule' => __DIR__ . '/..' . '/codezero/laravel-unique-translation/src/UniqueTranslationRule.php',
+        'CodeZero\\UniqueTranslation\\UniqueTranslationServiceProvider' => __DIR__ . '/..' . '/codezero/laravel-unique-translation/src/UniqueTranslationServiceProvider.php',
+        'CodeZero\\UniqueTranslation\\UniqueTranslationValidator' => __DIR__ . '/..' . '/codezero/laravel-unique-translation/src/UniqueTranslationValidator.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
